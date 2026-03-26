@@ -53,6 +53,11 @@ class Library {
 
     // TODO: Implement in branch feature-search-books
     public boolean searchBookByTitle(String title) {
+	   for (Book book : books) {
+        if (book.getTitle().equalsIgnoreCase(title)) {
+            return true;
+        		}
+    		}
         return false;
     }
 
@@ -118,6 +123,15 @@ public class SI2026Lab1Main {
         library.addBook(new Book("Effective Java", "Joshua Bloch", "Programming"));
         library.addBook(new Book("The Hobbit", "J.R.R. Tolkien", "Fantasy"));
         library.addBook(new Book("1984", "George Orwell", "Dystopian"));
+
+	  String title1 = "Clean Code";
+    String title2 = "Unknown Book";
+
+    System.out.println("Searching for: " + title1);
+    System.out.println("Exists: " + library.searchBookByTitle(title1));
+
+    System.out.println("Searching for: " + title2);
+    System.out.println("Exists: " + library.searchBookByTitle(title2));
 
         System.out.println("Library initialized.");
     }
