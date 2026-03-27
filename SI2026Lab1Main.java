@@ -67,7 +67,7 @@ class Library {
             if (book.getTitle().equalsIgnoreCase(title)) {
                 if (!book.isBorrowed()) {
                     book.setBorrowed(true);
-                    System.out.println("Book borrowed.");
+                    System.out.println(" Book checked out");
                 } else {
                     System.out.println("Book is already borrowed.");
                 }
@@ -94,6 +94,18 @@ class Library {
 
     // TODO: Implement in branch feature-genre-report
     public void printBooksByGenre(String genre) {
+	boolean found = false;	
+
+	for (Book book : books) {
+        if (book.getGenre().equalsIgnoreCase(genre)) {
+            System.out.println(book);
+            found = true;
+        }
+    }
+
+    if (!found) {
+        System.out.println("No books found for genre: " + genre);
+    }
     }
 
     public int countAvailableBooks() {
@@ -133,6 +145,19 @@ public class SI2026Lab1Main {
     System.out.println("Searching for: " + title2);
     System.out.println("Exists: " + library.searchBookByTitle(title2));
 
-        System.out.println("Library initialized.");
+    library.borrowBook("1984");      
+    library.borrowBook("1984");       
+    library.borrowBook("Unknown");	
+
+    System.out.println("\nBooks in genre Programming:");
+    library.printBooksByGenre("Programming");
+
+    System.out.println("\nBooks in genre Fantasy:");
+    library.printBooksByGenre("Fantasy");
+
+    System.out.println("\nBooks in genre Horror:");
+    library.printBooksByGenre("Horror");
+
+        
     }
 }
