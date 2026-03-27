@@ -1,0 +1,76 @@
+9.git checkout -b feature-search-books // додавам гранка со име feature-search-books
+
+10. git add .
+
+git commit -m "Implement book search" // правам commit на промени во фајлот SI2026Lab1Main.java .
+
+11. git push origin feature-search-books// ги праќам локалните commit-и на GitHub и од таму правам pull request.
+
+12. git checkout master // се префлувам на master гранката.
+
+git merge feature-search-books // ја спојувам feature-search-books со master гранката.
+
+13. * 397f53e (HEAD -> master, origin/feature-search-books, feature-search-books) Implement book search
+* 2dc4fd1 (origin/master) Add starter code
+* 2e20091 Initial commit // излез код командата git log --oneline --graph --all
+
+Спојувањето беше fast-forward, при што немаше конфликти.
+
+14.  git push origin master // го синхронизирам master со оддалечениот репозиториум 
+
+15. git checkout -b feature-borrow-book // правам нова гранка и се префлувам на неа
+
+git checkout master // се враќам во master
+
+git checkout -b feature-genre-report // правам уште една гранка
+
+16.  git checkout feature-borrow-book // се префлам на гранката feature-borrow-book
+
+git add .
+git commit -m "Implement borrow book" // направена имплементација 
+
+17. git checkout master // се враќам на master
+
+git add . 
+git commit -m "Update borrow message on master"// нова имплементација на master гранка
+
+18. git checkout feature-genre-report // се префлувам на гранка feature-genre-report
+
+git add . 
+git commit -m "Implement genre report"// имплементација на гранката feature-genre-report
+
+19. git push origin feature-borrow-book // го синхронизирам feature-borrow-book со оддалечениот репозиториум
+
+20. git push origin feature-genre-report // го синхронизирам feature-genre-report со оддалечениот репозиториум
+
+21. git checkout feature-borrow-book
+
+git merge master// при merge-ување настанува конфликт
+
+22. On branch master
+Your branch is up to date with 'origin/master'.
+nothing to commit, working tree clean 
+
+
+23. git checkout master// префлување на master
+
+git merge feature-genre-report // спојување со feature-genre-report
+
+Спојувањето е рекурзивно бидејќи двете гранки се одвојуваат од истата точка.
+
+24. git merge feature-borrow-book
+Updating d89f887..dfdfda1
+Fast-forward
+ SI2026Lab1Main.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+25. git push origin master 
+
+
+
+
+
+
+
+
+
